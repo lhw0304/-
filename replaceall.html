@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		//参数str1是要被替换的条件可以为正则表达式(如果有修饰符g必须以修饰g结尾)或者字符串；参数str2是替换的字符串；
+		String.prototype.replaceAll=function(str1,str2){
+			if(typeof str1 =="string"){
+				var reg = new RegExp(str1, "g");
+				return this.replace(reg,str2);
+			}
+			if(typeof str1 =="object"){
+				str1=str1+"";
+				if(str1.substr(-1)=="g"){
+					str1=eval(str1);
+					var reg = new RegExp(str1);
+					return this.replace(reg,str2);
+				}else{
+					str1=eval(str1+"g");
+					var reg = new RegExp(str1);
+					return this.replace(reg,str2);	
+				}
+			}
+		}
+		var str="abcacbc";
+		alert(str.replaceAll(/c/g,"dd"));
+		// alert(typeof str =="string");
+	</script>
+</body>
+</html>
