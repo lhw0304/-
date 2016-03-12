@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+	*{
+		border: 0;
+		padding: 0;
+		margin: 0;
+	}
+	.box{
+		height: 400px;
+		overflow: hidden;
+		position: relative;
+	}
+	.box .bg1{
+		height: 420px;
+		position: absolute;
+		top: -20px;
+		left: -40px;
+		width: 110%;
+		height: 110%;
+	}
+	.bg404{
+		position: absolute;
+		top: 77px;
+		left: 277px;
+	}
+	.cat{
+		position: absolute;
+		top: 87px;
+		left: 577px;
+	}
+	.catsd{
+		position: absolute;
+		top: 290px;
+		left: 577px;
+	}
+	.bg4sd{
+		position: absolute;
+		top: 275px;
+		left: 625px;
+	}
+	.bg4{
+		position: absolute;
+		top: 160px;
+		left: 617px;
+	}
+	.second{
+		position: absolute;
+		top: 120px;
+		left: 1017px;
+	}
+	.third{
+		position: absolute;
+		top: 100px;
+		left: 750px;
+	}
+</style>
+<body>
+	<div class="box">
+		<img class="bg1" src="imgs/bg1.jpg" alt="">
+
+		<img class="second" src="imgs/bg2.png" alt="">
+		<img class="third" src="imgs/bg3.png" alt=""> 
+
+		<img class="bg404" src="imgs/404.png" alt="">
+		<img class="bg4sd" src="imgs/bg4-shadow.png" alt="">
+		<img class="bg4" src="imgs/bg4.png" alt="">
+		<img class="catsd" src="imgs/cat-shadow.png" alt="">
+		<img class="cat" src="imgs/cat.png" alt="">
+	</div>
+	<script src="jquery-1.11.3.min.js"></script>
+	<script>
+	$(function(){
+		var $x,$y;
+		$cat=$('.cat');
+		$catsd=$('.catsd');
+		$bg404=$('.bg404');
+		$bg4=$(".bg4");
+		$bg4sd=$(".bg4sd");
+        $cattop=$cat.offset().top;
+        $catleft=$cat.offset().left;
+        $catsdtop=$catsd.offset().top;
+        $catsdleft=$catsd.offset().left;
+        $bg404top=$bg404.offset().top;
+        $bg404left=$bg404.offset().left;
+        $bg4top=$bg4.offset().top;
+        $bg4left=$bg4.offset().left;
+        $bg4sdtop=$bg4sd.offset().top;
+        $bg4sdleft=$bg4sd.offset().left;
+        $second=$('.second');
+        $secondtop=$second.offset().top;
+        $secondleft=$second.offset().left;
+        $third=$('.third');
+        $thirdtop=$third.offset().top;
+        $thirdleft=$third.offset().left;
+        $bg1=$('.bg1');
+        $bg1top=$bg1.offset().top;
+        $bg1left=$bg1.offset().left;
+		$(document).on('mousemove',function(e){
+          	$x=e.pageX/$(window).width()+0.5;
+          	$y=e.pageY/$(window).height()+0.5;
+          	$cat.css({
+          		top:$cattop*($y-1)*0.05+$cattop,
+          		left:$catleft*($x-1)*0.02+$catleft
+          	})
+          	$catsd.css({
+          		top:$cattop*($y-1)*0.05+$catsdtop,
+          		left:$catleft*($x-1)*0.02+$catsdleft
+          	})
+          	$bg404.css({
+          		top:$bg404top*($y-1)*0.05+$bg404top,
+          		left:$bg404left*($x-1)*0.02+$bg404left
+          	})
+          	$bg4.css({
+          		top:$bg4top*($y-1)*0.05+$bg4top,
+          		left:$bg4left*($x-1)*0.02+$bg4left
+          	})
+          	$bg4sd.css({
+          		top:$bg4top*($y-1)*0.05+$bg4sdtop,
+          		left:$bg4left*($x-1)*0.02+$bg4sdleft
+          	})
+          	$second.css({
+          		top:-$secondtop*($y-1)*0.05+$secondtop,
+          		left:-$secondleft*($x-1)*0.02+$secondleft
+          	})
+          	$third.css({
+          		top:-$thirdtop*($y-1)*0.05+$thirdtop,
+          		left:-$thirdleft*($x-1)*0.02+$thirdleft
+          	})
+          	$bg1.css({
+          		top:$bg1top*($y-1)*0.3+$bg1top,
+          		left:$bg1left*($x-1)*0.3+$bg1left
+          	})
+
+		});
+	})
+		
+	</script>
+</body>
+</html>
