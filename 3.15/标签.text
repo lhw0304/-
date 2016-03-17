@@ -1,0 +1,24 @@
+</ a>   anchor  超级链接
+<abbr></abbr>  abbreviation   简写的
+<b><b/>   bold   加粗
+<br/>   break   换行
+<hr/>   horizontal   横线
+<dl></dl>   dictionary list   字典列表
+<dt></dt>   dictionary title   字典标题
+<dd></dd>   dictionary data   字典数据
+<del></del>   delete   删除
+<div></div>   division   区块
+<em></em>   emphasize   强调
+<h1></h1>   head1   标题1
+<i></i>   italic   斜体
+<img></img>   image   图片
+<ul></ul>    unorder list  无序列表
+<ol></ol>    order list   有序列表
+<li></li>   list item   列表项
+<p></p>   paragraph   段落
+<table> </table>   表格
+<input></input>   输入 
+<sub></sub>   subscript   下标
+<sup></sup>  superscript   上标
+<td></td>   table data   表格数据
+<samp></samp>   sample   例子
